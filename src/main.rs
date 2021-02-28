@@ -24,24 +24,29 @@ fn main() {
     io::stdin()
         .read_line(&mut input)
         .unwrap();
+    let mut sister = String::new();
     for ch in input.to_ascii_lowercase().trim().chars() {
         match ch {
             'a' => {
-                chars.a += 1
+                chars.a += 1;
+                sister += "t";
             },
             'c' => {
-                chars.c += 1
+                chars.c += 1;
+                sister += "g";
             },
             'g' => {
-                chars.g += 1
+                chars.g += 1;
+                sister += "c";
             },
             't' => {
-                chars.t += 1
+                chars.t += 1;
+                sister += "a";
             }
             _ => {
                 eprint!("INVALID CHARACTER ENCOUNTERED!")
             }
         }
     }
-    println!("{:?}", chars)
+    println!("{:?}\nSister Sequence: {}", chars, sister)
 }
